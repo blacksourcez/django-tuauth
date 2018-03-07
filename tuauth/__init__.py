@@ -5,4 +5,4 @@ __license__ = 'MIT'
 
 VERSION = __version__
 
-import .backend
+import tuauth.backend
