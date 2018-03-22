@@ -18,7 +18,7 @@ Usage
 ### Prerequisite
 Register application in api.tu.ac.th/applications
 > note: Callback URL must be same with decarelation in urls.py
-> in this example use http://127.0.0.1/oauth/complete/
+> in this example use http://127.0.0.1/oauth/complete/tu/
 
 ### in setting.py 
 ```python
