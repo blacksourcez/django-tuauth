@@ -10,7 +10,8 @@ Requirements
 Installation
 ============
 ```
-pip install git+https://github.com/LeOntalEs/django-tuauth.git
+pip install social-auth-app-django
+pip install git+https://github.com/scitu/django-tuauth.git
 ```
 
 Usage
