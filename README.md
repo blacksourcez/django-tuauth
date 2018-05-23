@@ -1,6 +1,6 @@
-Dajgno TU Authentication
+Django TU Authentication
 ========================
-
+    
 Requirements
 ============
 - python (2.7, 3.5)
@@ -34,10 +34,13 @@ add authentication backend in setting.py
 ```python
 AUTHENTICATION_BACKENDS = (
     ...
+    'django.contrib.auth.backends.ModelBackend',
     'tuauth.backend.TUOAuth2',
     ...
 )
 ```
+> note: 'django.contrib.auth.backends.ModelBackend' for use built-in authen
+
 set client id and client secret in setting.py
 ```python
 SOCIAL_AUTH_TU_KEY = '<client_id>'
