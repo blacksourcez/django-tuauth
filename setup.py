@@ -3,7 +3,7 @@ import re
 from setuptools import find_packages, setup
 
 def get_version():
-    init_py = open(os.path.join(package, '__init__.py')).read()
+    init_py = open(os.path.join('tuauth', '__init__.py')).read()
     return re.search("__version__ = ['\"]([^'\"]+)['\"]", init_py).group(1)
     
 with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
@@ -14,9 +14,12 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-tuauth',
-    version='0.1',
-    url='https://github.com/LeOntalEs/django-tuauth',
+    version=get_version(),
+    url='https://github.com/scitu/django-tuauth',
     packages=find_packages(),
+    install_requires=[
+        'social-auth-app-django',
+    ],
     include_package_data=True,
     license='MIT License',
     description='A simple way to use TU authentication in django application.',
