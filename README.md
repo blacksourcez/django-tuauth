@@ -1,6 +1,6 @@
 Django TU Authentication
 ========================
-    
+
 Requirements
 ============
 - python (2.7, 3.5)
@@ -20,7 +20,7 @@ Register application in api.tu.ac.th/applications
 > note: Callback URL must be same with decarelation in urls.py
 > in this example use http://127.0.0.1/oauth/complete/tu/
 
-### in setting.py 
+### in setting.py
 ```python
 INSTALLED_APPS = [
     ...
@@ -48,7 +48,7 @@ SOCIAL_AUTH_TU_SECRET = '<client_secret>'
 
 Sample SOCIAL_AUTH_PIPELINE
 ```python
-SOCIAL_AUTH_PIPELINE = [ 
+SOCIAL_AUTH_PIPELINE = [
     'social_core.pipeline.social_auth.social_details',
     'social_core.pipeline.social_auth.social_uid',
     'social_core.pipeline.social_auth.social_user',
@@ -77,3 +77,41 @@ urlpatterns = [
         <a href="{% url 'social:begin' 'tu' %}">Login with TU</a><br>
     ...
 ```
+
+Response
+=======
+
+### Sample response data
+```
+HTTP 200 OK
+Allow: GET, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
+{
+    "birthdate": "...",
+    "email": null,
+    "username": "...",
+    "isactive": "...",
+    "firstname": "...",
+    "lastname": "...",
+    "fullname": "...",
+    "staffmail": "...",
+    "type": "...",
+    "tumail": "...",
+    "department": "...",
+    "company": "...",
+    "role": "1"
+}
+```
+
+### Roles Meaning
+
+| Value | Meaning    |
+|-------|------------|
+|       |            |
+| 1     | STUDENT    |
+| 2     | STAFF      |
+| 3     | INSTRUCTOR |
+
+Note: for some case user doesn't have a role(for test id) you need to handle it by yourself.
