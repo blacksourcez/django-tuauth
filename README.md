@@ -101,7 +101,7 @@ Vary: Accept
     "tumail": "...",
     "department": "...",
     "company": "...",
-    "role": "1"
+    "role": "..."
 }
 ```
 
